@@ -64,7 +64,10 @@ const AppProvider = ({ children }) => {
   }, [newImages])
 
   const event = () => {
-    if (window.innerHeight + window.scrollY >= document.body.scrollHeight - 2) {
+    if (
+      window.innerHeight + window.scrollY >=
+      document.body.scrollHeight - 10
+    ) {
       setNewImages(true)
     }
   }
