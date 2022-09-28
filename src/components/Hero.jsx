@@ -1,6 +1,5 @@
 import mainLogo from "../assets/image_4.jpg"
-import Navbar from "./Navbar"
-
+import { Navbar, SearchForm } from "../components"
 const Hero = () => {
   const backgroundImageStyle = {
     backgroundImage: `URL("${mainLogo}")`,
@@ -19,6 +18,7 @@ const Hero = () => {
           </p>
         </a>
         <Navbar />
+        <SearchForm />
       </section>
     </>
   )
