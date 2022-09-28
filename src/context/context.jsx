@@ -11,7 +11,7 @@ const AppContext = React.createContext()
 const AppProvider = ({ children }) => {
   const [loading, setLoading] = useState(false)
   const [photos, setPhotos] = useState([])
-  const [page, setPage] = useState(1)
+  const [page, setPage] = useState(0)
   const [query, setQuery] = useState("")
 
   // Fetch Images
@@ -31,7 +31,9 @@ const AppProvider = ({ children }) => {
       const response = await fetch(url)
       const data = await response.json()
       setPhotos((oldPhotos) => {
-        if (query) {
+        if (query && page === 1) {
+          return data.results
+        } else if (query) {
           return [...oldPhotos, ...data.results]
         } else {
           return [...oldPhotos, ...data]
@@ -64,7 +66,7 @@ const AppProvider = ({ children }) => {
 
   return (
     <AppContext.Provider
-      value={{ loading, photos, query, setQuery, fetchImages }}
+      value={{ loading, photos, query, setPage, setQuery, fetchImages }}
     >
       {children}
     </AppContext.Provider>

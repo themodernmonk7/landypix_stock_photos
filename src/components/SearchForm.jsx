@@ -3,11 +3,11 @@ import { BiDotsHorizontalRounded } from "react-icons/bi"
 import { useGlobalContext } from "../context/context"
 
 const SearchForm = () => {
-  const { query, setQuery, fetchImages } = useGlobalContext()
+  const { query, setQuery, setPage, fetchImages } = useGlobalContext()
 
   const handleSubmit = (e) => {
     e.preventDefault()
-    fetchImages()
+    setPage(1)
   }
   return (
     <>
