@@ -5,7 +5,7 @@ const Navbar = () => {
     <>
       <nav className="flex justify-between items-center py-4 px-8 md:px-24">
         {/* Logo */}
-        <div className="text-white text-2xl hover:text-gray-400 transition-all duration-300 ease-linear">
+        <div className="text-white text-4xl font-landypix font-black tracking-wider hover:text-gray-400 transition-all duration-300 ease-linear">
           <a href="#">
             <h1>landypix</h1>
           </a>
