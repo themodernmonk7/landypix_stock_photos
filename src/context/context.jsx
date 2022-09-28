@@ -20,8 +20,8 @@ const AppProvider = ({ children }) => {
     try {
       const response = await fetch(url)
       const data = await response.json()
-      console.log(data)
       setPhotos(data)
+      setLoading(false)
     } catch (error) {
       console.log(error)
       setLoading(false)
@@ -32,7 +32,11 @@ const AppProvider = ({ children }) => {
     fetchImages()
   }, [])
 
-  return <AppContext.Provider value="hello">{children}</AppContext.Provider>
+  return (
+    <AppContext.Provider value={{ loading, photos }}>
+      {children}
+    </AppContext.Provider>
+  )
 }
 
 // custom hook
