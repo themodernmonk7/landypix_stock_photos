@@ -1,6 +1,11 @@
+import { Hero, Card } from "./components"
+
 function App() {
   return (
-    <h1>hello</h1>
+    <>
+      <Hero />
+      <Card />
+    </>
   )
 }
 
