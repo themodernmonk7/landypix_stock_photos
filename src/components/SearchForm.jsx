@@ -3,12 +3,18 @@ import { BiDotsHorizontalRounded } from "react-icons/bi"
 import { useGlobalContext } from "../context/context"
 
 const SearchForm = () => {
-  const { query, setQuery, setPage, fetchImages } = useGlobalContext()
+  const { query, setQuery, setPage, fetchImages, page } = useGlobalContext()
 
   const handleSubmit = (e) => {
     e.preventDefault()
+    if (!query) return
+    if (page === 1) {
+      fetchImages()
+      return
+    }
     setPage(1)
   }
+
   return (
     <>
       <div className="grid place-items-center">

@@ -1,4 +1,4 @@
-import React, { useContext, useEffect, useState } from "react"
+import React, { useContext, useEffect, useState, useRef } from "react"
 
 //** =================== URLs =================== */
 const clientID = `?client_id=0OkjcFuPSJZjSwGEuC9e8S7MI6p4YY8vgeSgY9Xa6D4`
@@ -11,8 +11,9 @@ const AppContext = React.createContext()
 const AppProvider = ({ children }) => {
   const [loading, setLoading] = useState(false)
   const [photos, setPhotos] = useState([])
-  const [page, setPage] = useState(0)
+  const [page, setPage] = useState(1)
   const [query, setQuery] = useState("")
+  const mounted = useRef(false)
 
   // Fetch Images
   const fetchImages = async () => {
@@ -51,22 +52,16 @@ const AppProvider = ({ children }) => {
   }, [page])
 
   useEffect(() => {
-    const event = window.addEventListener("scroll", () => {
-      if (
-        !loading &&
-        window.innerHeight + window.scrollY >= document.body.scrollHeight - 10
-      ) {
-        setPage((oldPage) => {
-          return oldPage + 1
-        })
-      }
-    })
-    return () => window.removeEventListener("scroll", event)
+    if (!mounted.current) {
+      mounted.current = true
+      return
+    }
+    console.log("it worked")
   }, [])
 
   return (
     <AppContext.Provider
-      value={{ loading, photos, query, setPage, setQuery, fetchImages }}
+      value={{ loading, photos, page, query, setPage, setQuery, fetchImages }}
     >
       {children}
     </AppContext.Provider>
@@ -75,7 +70,7 @@ const AppProvider = ({ children }) => {
 
 // custom hook
 export const useGlobalContext = () => {
-    return useContext(AppContext)
+  return useContext(AppContext)
 }
 
 export { AppContext, AppProvider }
