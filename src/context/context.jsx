@@ -14,6 +14,7 @@ const AppProvider = ({ children }) => {
   const [page, setPage] = useState(1)
   const [query, setQuery] = useState("")
   const mounted = useRef(false)
+  const [newImages, setNewImages] = useState(false)
 
   // Fetch Images
   const fetchImages = async () => {
@@ -40,10 +41,11 @@ const AppProvider = ({ children }) => {
           return [...oldPhotos, ...data]
         }
       })
+      setNewImages(false)
       setLoading(false)
     } catch (error) {
+      setNewImages(false)
       setLoading(false)
-      console.log(error)
     }
   }
 
@@ -56,7 +58,20 @@ const AppProvider = ({ children }) => {
       mounted.current = true
       return
     }
-    console.log("it worked")
+    if (!newImages) return
+    if (loading) return
+    setPage((oldPage) => oldPage + 1)
+  }, [newImages])
+
+  const event = () => {
+    if (window.innerHeight + window.scrollY >= document.body.scrollHeight - 2) {
+      setNewImages(true)
+    }
+  }
+
+  useEffect(() => {
+    window.addEventListener("scroll", event)
+    return () => window.removeEventListener("scroll", event)
   }, [])
 
   return (
