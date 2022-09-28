@@ -2,6 +2,10 @@ import React, { useContext, useEffect, useState, useRef } from "react"
 
 //** =================== URLs =================== */
 const clientID = `?client_id=0OkjcFuPSJZjSwGEuC9e8S7MI6p4YY8vgeSgY9Xa6D4`
+/**
+ * TODO: Refactor the clientID error, I am getting in console.log
+ // const clientID = `?client_id=${process.env.REACT_APP_ACCESS_KEY}` 
+ */
 const mainURL = `https://api.unsplash.com/photos/`
 const searchURL = `https://api.unsplash.com/search/photos/`
 //** =========================================== */
