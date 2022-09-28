@@ -1,5 +1,5 @@
 import { useGlobalContext } from "../context/context"
-import Buttons from "./Buttons"
+import { Buttons, Loading } from "../components"
 
 const Card = () => {
   const { loading, photos } = useGlobalContext()
@@ -52,7 +52,7 @@ const Card = () => {
               </article>
             )
           })}
-          {loading && <h2>Loading...</h2>}
+          {loading && <Loading />}
         </div>
       </section>
     </>
