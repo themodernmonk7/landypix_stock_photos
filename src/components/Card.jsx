@@ -19,7 +19,6 @@ const Card = () => {
 
         <div className="grid grid-cols-2 md:grid-cols-3 gap-2 px-3 md:gap-6 md:px-6 ">
           {photos.map((image, id) => {
-            console.log(image)
             const {
               alt_description,
               likes,

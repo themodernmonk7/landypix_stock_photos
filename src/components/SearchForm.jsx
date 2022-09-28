@@ -1,10 +1,13 @@
 import { AiOutlineSearch } from "react-icons/ai"
 import { BiDotsHorizontalRounded } from "react-icons/bi"
+import { useGlobalContext } from "../context/context"
 
 const SearchForm = () => {
+  const { query, setQuery, fetchImages } = useGlobalContext()
+
   const handleSubmit = (e) => {
     e.preventDefault()
-    console.log("submit query")
+    fetchImages()
   }
   return (
     <>
@@ -17,8 +20,10 @@ const SearchForm = () => {
           <form className="w-full md:w-3/5 flex justify-center items-center  relative">
             <input
               type="text"
+              value={query}
               placeholder="Search for free photos"
-              className=" px-3 py-3 w-full font-semibold rounded-md border-none tracking-wide"
+              className=" px-3 py-3 w-full text-black font-semibold rounded-md border-none tracking-wide"
+              onChange={(e) => setQuery(e.target.value)}
             />
             <button onClick={handleSubmit}>
               <span className=" absolute right-0 top-1 text-gray-500  px-2 py-2 text-center">

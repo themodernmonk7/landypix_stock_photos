@@ -12,23 +12,35 @@ const AppProvider = ({ children }) => {
   const [loading, setLoading] = useState(false)
   const [photos, setPhotos] = useState([])
   const [page, setPage] = useState(1)
+  const [query, setQuery] = useState("")
 
   // Fetch Images
   const fetchImages = async () => {
     setLoading(true)
     let url
     const urlPage = `&page=${page}`
-    url = `${mainURL}${clientID}${urlPage}`
+    const urlQuery = `&query=${query}`
+
+    if (query) {
+      url = `${searchURL}${clientID}${urlPage}${urlQuery}`
+    } else {
+      url = `${mainURL}${clientID}${urlPage}`
+    }
+
     try {
       const response = await fetch(url)
       const data = await response.json()
       setPhotos((oldPhotos) => {
-        return [...oldPhotos, ...data]
+        if (query) {
+          return [...oldPhotos, ...data.results]
+        } else {
+          return [...oldPhotos, ...data]
+        }
       })
       setLoading(false)
     } catch (error) {
-      console.log(error)
       setLoading(false)
+      console.log(error)
     }
   }
 
@@ -51,7 +63,9 @@ const AppProvider = ({ children }) => {
   }, [])
 
   return (
-    <AppContext.Provider value={{ loading, photos }}>
+    <AppContext.Provider
+      value={{ loading, photos, query, setQuery, fetchImages }}
+    >
       {children}
     </AppContext.Provider>
   )
