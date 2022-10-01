@@ -18,7 +18,7 @@ const SearchForm = () => {
   return (
     <>
       <div className="grid place-items-center">
-        <div className="text-white space-y-8 flex flex-col justify-center items-center mt-16 md:mt-20 px-4 ">
+        <div className="text-white space-y-8 flex flex-col justify-center items-center mt-16 md:mt-20 px-10  ">
           <h2 className=" md:w-3/5 text-3xl font-semibold ">
             The best free stock photos, royalty free images & videos shared by
             creators.
@@ -28,7 +28,7 @@ const SearchForm = () => {
               type="text"
               value={query}
               placeholder="Search for free photos"
-              className=" px-3 py-3 w-full text-black font-semibold rounded-md border-none tracking-wide"
+              className=" px-3 py-3 w-full text-gray-500 font-semibold rounded-md border-none tracking-wide focus:outline-none placeholder:font-normal"
               onChange={(e) => setQuery(e.target.value)}
             />
             <button onClick={handleSubmit}>
