@@ -2,7 +2,6 @@ import React, { useContext, useEffect, useState, useRef } from "react"
 
 //** =================== URLs =================== */
 const clientID = `?client_id=${import.meta.env.VITE_REACT_APP_ACCESS_KEY}` 
-console.log(clientID)
 const mainURL = `https://api.unsplash.com/photos/`
 const searchURL = `https://api.unsplash.com/search/photos/`
 //** =========================================== */
