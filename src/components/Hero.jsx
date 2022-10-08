@@ -1,4 +1,4 @@
-import mainLogo from "../assets/image_4.jpg"
+import mainLogo from "../assets/image4.jpg"
 import { Navbar, SearchForm } from "../components"
 const Hero = () => {
   const backgroundImageStyle = {
