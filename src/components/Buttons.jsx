@@ -1,8 +1,8 @@
 const Buttons = () => {
   return (
     <>
-      <div className="text-center space-x-6 text-sm md:text-xl ">
-        <button className="bg-black text-white px-4 rounded-full py-2">
+      <div className="space-x-6 text-center text-sm md:text-xl ">
+        <button className="rounded-full bg-black px-4 py-2 text-white">
           Home
         </button>
         <button className="">Videos</button>

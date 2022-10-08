@@ -3,29 +3,29 @@ import { BiDotsHorizontalRounded } from "react-icons/bi"
 const Navbar = () => {
   return (
     <>
-      <nav className="flex justify-between items-center py-4 px-8 md:px-24">
+      <nav className="flex items-center justify-between py-4 px-8 md:px-24">
         {/* Logo */}
-        <div className="text-white text-4xl font-landypix font-black tracking-wider hover:text-gray-400 transition-all duration-300 ease-linear">
+        <div className="font-landypix text-4xl font-black tracking-wider text-white transition-all duration-300 ease-linear hover:text-gray-400">
           <a href="#">
             <h1>landypix</h1>
           </a>
         </div>
         {/* menu items */}
-        <div className="flex justify-center items-center space-x-10 text-white">
-          <ul className="hidden md:flex justify-center items-center space-x-6 text-lg font-normal ">
-            <li className="hover:text-gray-400 transition-all duration-300 ease-linear">
+        <div className="flex items-center justify-center space-x-10 text-white">
+          <ul className="hidden items-center justify-center space-x-6 text-lg font-normal md:flex ">
+            <li className="transition-all duration-300 ease-linear hover:text-gray-400">
               {" "}
               <a href="#"> Explore </a>
             </li>
-            <li className="hover:text-gray-400 transition-all duration-300 ease-linear">
+            <li className="transition-all duration-300 ease-linear hover:text-gray-400">
               {" "}
               <a href="#"> License </a>
             </li>
-            <li className="hover:text-gray-400 transition-all duration-300 ease-linear">
+            <li className="transition-all duration-300 ease-linear hover:text-gray-400">
               {" "}
               <a href="#"> Upload </a>
             </li>
-            <li className="hover:text-gray-400 transition-all duration-300 ease-linear">
+            <li className="transition-all duration-300 ease-linear hover:text-gray-400">
               {" "}
               <a href="#">
                 {" "}
@@ -33,7 +33,7 @@ const Navbar = () => {
               </a>
             </li>
           </ul>
-          <button className="bg-white text-black px-4 h-[50px] rounded-md text-lg">
+          <button className="h-[50px] rounded-md bg-white px-4 text-lg text-black">
             Join
           </button>
         </div>

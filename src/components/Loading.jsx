@@ -3,7 +3,7 @@ import React from "react"
 const Loading = () => {
   return (
     <>
-      <h1 className="text-3xl font-semibold text-center tracking-wider">
+      <h1 className="text-center text-3xl font-semibold tracking-wider">
         Loading...
       </h1>
     </>

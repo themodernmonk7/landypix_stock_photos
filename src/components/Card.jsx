@@ -32,15 +32,15 @@ const Card = () => {
             return (
               <article
                 key={id}
-                className="relative bg-blue-200 overflow-hidden photo"
+                className="photo relative overflow-hidden bg-blue-200"
               >
                 <img
                   src={regular}
                   alt={alt_description}
-                  className="object-cover w-full h-64 md:h-96 object-center"
+                  className="h-64 w-full object-cover object-center md:h-96"
                 />
-                <div className="bg-black/50 flex justify-between  items-center px-4 py-2 absolute bottom-0 w-full transform translate-y-full photo-info transition-all duration-300 ease-linear">
-                  <div className="text-white text-xs md:text-base">
+                <div className="photo-info absolute bottom-0  flex w-full translate-y-full transform items-center justify-between bg-black/50 px-4 py-2 transition-all duration-300 ease-linear">
+                  <div className="text-xs text-white md:text-base">
                     <h4 className=" font-semibold tracking-wide ">{name}</h4>
                     <p className="font-light "> {likes} Likes</p>
                   </div>
@@ -48,7 +48,7 @@ const Card = () => {
                     <img
                       src={medium}
                       alt={name}
-                      className="w-10 h-10 object-cover object-center rounded-full"
+                      className="h-10 w-10 rounded-full object-cover object-center"
                     />
                   </a>
                 </div>

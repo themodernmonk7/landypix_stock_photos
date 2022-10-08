@@ -18,33 +18,33 @@ const SearchForm = () => {
   return (
     <>
       <div className="grid place-items-center">
-        <div className="text-white space-y-8 flex flex-col justify-center items-center mt-16 md:mt-20 px-10  ">
-          <h2 className=" md:w-3/5 text-3xl font-semibold ">
+        <div className="mt-16 flex flex-col items-center justify-center space-y-8 px-10 text-white md:mt-20  ">
+          <h2 className=" text-3xl font-semibold md:w-3/5 ">
             The best free stock photos, royalty free images & videos shared by
             creators.
           </h2>
-          <form className="w-full md:w-3/5 flex justify-center items-center  relative">
+          <form className="relative flex w-full items-center justify-center  md:w-3/5">
             <input
               type="text"
               value={query}
               placeholder="Search for free photos"
-              className=" px-3 py-3 w-full text-gray-500 font-semibold rounded-md border-none tracking-wide focus:outline-none placeholder:font-normal"
+              className=" w-full rounded-md border-none px-3 py-3 font-semibold tracking-wide text-gray-500 placeholder:font-normal focus:outline-none"
               onChange={(e) => setQuery(e.target.value)}
             />
             <button onClick={handleSubmit}>
-              <span className=" absolute right-0 top-1 text-gray-500  px-2 py-2 text-center">
+              <span className=" absolute right-0 top-1 px-2  py-2 text-center text-gray-500">
                 {" "}
                 <AiOutlineSearch size="25px" />{" "}
               </span>
             </button>
           </form>
 
-          <h4 className=" text-[15px] w-full md:w-3/5 flex items-center space-x-2 md:text-lg">
+          <h4 className=" flex w-full items-center space-x-2 text-[15px] md:w-3/5 md:text-lg">
             <span className="text-gray-300">Trending: </span>
             <span className="font-semibold">
               sunset, space, abstract, sky, dark
             </span>
-            <span className="hidden md:flex ml-2 bg-gray-400/50 rounded-full hover:bg-gray-400/50 hover:text-gray-300/70 transition-all duration-200 ease-linear">
+            <span className="ml-2 hidden rounded-full bg-gray-400/50 transition-all duration-200 ease-linear hover:bg-gray-400/50 hover:text-gray-300/70 md:flex">
               <a href="#">
                 <BiDotsHorizontalRounded size="25px" />{" "}
               </a>
