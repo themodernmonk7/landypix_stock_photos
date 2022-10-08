@@ -30,11 +30,14 @@ const Card = () => {
               },
             } = image
             return (
-              <article key={id} className="relative overflow-hidden photo">
+              <article
+                key={id}
+                className="relative bg-blue-200 overflow-hidden photo"
+              >
                 <img
                   src={regular}
                   alt={alt_description}
-                  className="object-cover object-center w-full h-full"
+                  className="object-cover w-full h-64 md:h-96 object-center"
                 />
                 <div className="bg-black/50 flex justify-between  items-center px-4 py-2 absolute bottom-0 w-full transform translate-y-full photo-info transition-all duration-300 ease-linear">
                   <div className="text-white text-xs md:text-base">
