@@ -33,7 +33,7 @@ const Navbar = () => {
               </a>
             </li>
           </ul>
-          <button className="h-[50px] rounded-md bg-white px-4 text-lg text-black">
+          <button className="rounded-md bg-white py-2 px-5 text-lg text-black md:py-3 ">
             Join
           </button>
         </div>

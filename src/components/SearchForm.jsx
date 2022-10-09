@@ -18,8 +18,8 @@ const SearchForm = () => {
   return (
     <>
       <div className="grid place-items-center">
-        <div className="mt-16 flex flex-col items-center justify-center space-y-8 px-10 text-white md:mt-20  ">
-          <h2 className=" text-3xl font-semibold md:w-3/5 ">
+        <div className="mt-16 flex flex-col items-center justify-center space-y-7 px-4 text-white md:mt-20 md:px-10  ">
+          <h2 className="w-full text-3xl font-semibold leading-[2.4rem] md:w-3/5 ">
             The best free stock photos, royalty free images & videos shared by
             creators.
           </h2>
@@ -28,7 +28,7 @@ const SearchForm = () => {
               type="text"
               value={query}
               placeholder="Search for free photos"
-              className=" w-full rounded-md border-none px-3 py-3 font-semibold tracking-wide text-gray-500 placeholder:font-normal focus:outline-none"
+              className=" w-full rounded-md border-none px-5 py-3 font-semibold tracking-wide text-gray-500 placeholder:font-normal focus:outline-none"
               onChange={(e) => setQuery(e.target.value)}
             />
             <button onClick={handleSubmit}>
@@ -39,7 +39,7 @@ const SearchForm = () => {
             </button>
           </form>
 
-          <h4 className=" flex w-full items-center space-x-2 text-[15px] md:w-3/5 md:text-lg">
+          <h4 className=" flex w-full items-center space-x-2 text-sm md:w-3/5 md:text-lg">
             <span className="text-gray-300">Trending: </span>
             <span className="font-semibold">
               sunset, space, abstract, sky, dark
