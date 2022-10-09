@@ -5,19 +5,19 @@ const Card = () => {
   const { loading, photos } = useGlobalContext()
   return (
     <>
-      <section className="container mx-auto space-y-8 my-6">
+      <section className="container mx-auto my-6 space-y-8">
         <Buttons />
 
-        <div className="flex justify-between items-center px-3 md:px-6">
-          <h1 className="text-2xl md:text-2xl text-gray-800">
+        <div className="flex items-center justify-between px-3 md:px-6">
+          <h1 className="text-2xl text-gray-800 md:text-2xl">
             Free Stock Photos
           </h1>
-          <button className="border px-2 md:px-5 py-3 rounded-md text-xl text-gray-800">
+          <button className="rounded-md border px-2 py-3 text-xl text-gray-800 md:px-5">
             Trending
           </button>
         </div>
 
-        <div className="grid grid-cols-2 md:grid-cols-3 gap-2 px-3 md:gap-6 md:px-6 ">
+        <div className="grid grid-cols-2 gap-2 px-3 md:grid-cols-3 md:gap-6 md:px-6 ">
           {photos.map((image, id) => {
             const {
               alt_description,
@@ -55,8 +55,8 @@ const Card = () => {
               </article>
             )
           })}
-          {loading && <Loading />}
         </div>
+        {loading && <Loading />}
       </section>
     </>
   )
